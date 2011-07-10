@@ -2,5 +2,8 @@
   "name": "My Preso",
   "sections": [
     {"section":"intro"} 
+    {"section":"compound-model"}, 
+    {"section":"page-object"},
+    {"section":"conclusion"}
   ]
 }
