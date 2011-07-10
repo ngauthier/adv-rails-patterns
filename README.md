@@ -1,0 +1,1 @@
+# Advanced Rails Patterns
