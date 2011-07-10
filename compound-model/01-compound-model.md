@@ -54,7 +54,9 @@
         :subject => @subject,
         :is_public => @public
       )
-      raise ActiveRecord::Rollback unless @conversation.save
+      if !@conversation.save
+        raise ActiveRecord::Rollback
+      end
       @conversation.addresses = addresses
     end
 
@@ -78,7 +80,8 @@
     begin
       # parse email addresses
     rescue Mail::Field::ParseError
-      @errors.add :recipients, "are not all valid email addresses"
+      @errors.add :recipients,
+        "are not all valid email addresses"
     end
 
 !SLIDE
@@ -89,8 +92,8 @@
       # * String
       # * Address (AR Model)
       # * Mail::Address
-      # And find or create a corresponding Address object
-      # or raise a Shortmail::InvalidAddress exception
+      # And find or create a corresponding Address
+      # or raise a Shortmail::InvalidAddress
     end
 
 !SLIDE bullets

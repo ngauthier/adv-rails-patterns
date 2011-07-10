@@ -1,0 +1,33 @@
+h1 {
+  font-size: 4em;
+}
+h2 {
+  font-size: 3em;
+}
+h3 {
+  font-size: 2em;
+}
+h4 {
+  font-size: 1.5em;
+}
+h5 {
+  font-size: 1em;
+}
+
+pre {
+  font-size: 2em;
+}
+
+.content ul {
+  margin: 0 auto;
+  width: 75%;
+}
+.content ul li {
+  text-align: left;
+  list-style-type: disc;
+}
+.content h3 {
+  width: 75%;
+  margin: 0 auto 15px;
+  text-align: left;
+}
