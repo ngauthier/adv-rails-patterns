@@ -1,0 +1,2 @@
+!SLIDE 
+# Advanced Rails Patterns 
