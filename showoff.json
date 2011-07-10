@@ -1,5 +1,5 @@
 { 
-  "name": "My Preso",
+  "name": "Advanced Rails Patterns",
   "sections": [
     {"section":"intro"}, 
     {"section":"compound-model"}, 
