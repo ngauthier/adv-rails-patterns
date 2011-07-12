@@ -13,14 +13,22 @@
 # But even in Cucumber
     @@@ cucumber
     Then there (is|are) (n) Widget[s]
-      assert_equal n, find('.widgets).size
-    
+<span/>
+    @@@ ruby
+      assert_equal n, find('.widgets').size
+<br/>
+    @@@ cucumber
     When I delete a Widget[ named "X"]
+<span/>
+    @@@ ruby
       find('.widgets').detect do |w|
         w.find('.name').value == X
       end.find('.delete').click
-    
+<br/>
+    @@@ cucumber
     Then there should exist a widget named "X"
+<span/>
+    @@@ ruby
       refute_nil find('.widgets').detect do |w|
         w.find('.name').value == X
       end
@@ -69,12 +77,20 @@
 # Cucumber revisited
     @@@ cucumber
     Then there (is|are) (n) Widget[s]
+<span/>
+    @@@ ruby
       assert_equal n, Dom::Widget.count
-
+<br/>
+    @@@ cucumber
     When I delete a Widget[ named "X"]
+<span/>
+    @@@ ruby
       Dom::Widget.detect{|w| w.name == X }.delete
-    
+<br/>
+    @@@ cucumber
     Then there should exist a widget named "X"
+<span/>
+    @@@ ruby
       refute_nil Dom::Widget.detect{|w| w.name == X }
 ## Where's my markup???
 
@@ -84,7 +100,8 @@
 ### Thank you and enjoy the ride.
 
 !SLIDE
-# Second Interation
+# Second Interation: Domino
+## ActiveRecord inspired Page Object
     @@@ ruby
     class Dom::Widget < Domino
       selector '.widgets .widget'
@@ -94,14 +111,6 @@
       end
     end
     Dom::Widget.find_by_name('alpha').delete
-
-!SLIDE bullets
-# Domino
-## [https://github.com/ngauthier/domino](https://github.com/ngauthier/domino)
-* Framework agnostic
-* Object-Oriented (Inheritance! Modules!)
-* Enumerable and ActiveRecord inspired
-* Requirement: capybara
 
 !SLIDE bullets
 # Page Object advantages
